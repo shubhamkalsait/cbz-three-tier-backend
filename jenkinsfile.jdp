@@ -44,7 +44,7 @@ pipeline {
         }
         stage('BUILD'){
             steps {
-                sh '''cp application/
+                sh '''cp -vf application.properties 
                 '''
             }
         }

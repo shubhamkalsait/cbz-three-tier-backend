@@ -1,4 +1,4 @@
-FROM java:latest
+FROM java:8
 RUN sudo apt update -y && sudo apt install openjdk-8-jdk -y
 RUN sudo apt install maven -y
 COPY . /opt

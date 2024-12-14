@@ -50,7 +50,7 @@ pipeline {
         }
         stage('DOCKER-BUILD') {
             steps{
-              sh '''docker build . -t shubhamkalsait1/dyl-my-backend:latest
+              sh '''docker build . -t shubhamkalsait1/cbz-my-backend:latest
                     echo "Redhat@123" | docker login --username shubhamkalsait1 --password-stdin
                     docker push shubhamkalsait1/dyl-my-backend:latest
                     docker rmi shubhamkalsait1/dyl-my-backend:latest'''

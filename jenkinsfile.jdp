@@ -39,7 +39,7 @@ pipeline {
     stages {
         stage('PULL') {
             steps{
-                git branch: 'dev', url: 'https://github.com/shubhamkalsait/dyl-my-backend.git'
+                git branch: 'main', url: 'https://github.com/shubhamkalsait/cbz-three-tier-backend.git'
             }
         }
         stage('BUILD') {

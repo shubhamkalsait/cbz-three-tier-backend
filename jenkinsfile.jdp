@@ -45,8 +45,7 @@ pipeline {
         stage('BUILD'){
             steps {
                 sh '''cp -vf application.properties src/main/resources/application.properties
-                    /opt/maven/bin/mvn clean package
-                '''
+                    /opt/maven/bin/mvn clean package'''
             }
         }
         stage('DOCKER-BUILD') {

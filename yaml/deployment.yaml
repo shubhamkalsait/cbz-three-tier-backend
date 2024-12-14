@@ -1,21 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:
-  name: cbz-backend-1
+metadata: 
+  name: dyl-backend
   labels:
-    app: cbz-backend-1
+    app: dyl-backend
 spec:
   replicas: 1
-  selector:
+  selector: 
     matchLabels:
-      app: cbz-backend-1
+      app: dyl-backend
   template:
-    metadata:
+    metadata: 
       labels:
-        app: cbz-backend-1
+        app: dyl-backend
     spec:
       containers:
-      - name: cbz-backend-1
-        image: shubhamkalsait1/cbz-backend-1:latest
-        ports:
-        - containerPort: 8080
+        - name: dyl-backend
+          image: shubhamkalsait1/cbz-three-tier-backend:latest
+          ports:
+          - containerPort: 8080
+            name: java

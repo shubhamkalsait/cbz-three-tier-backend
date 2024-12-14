@@ -1,5 +1,4 @@
 FROM ubuntu:latest
-COPY . .
-WORKDIR /opt
+COPY . opt/
 EXPOSE 8080
 CMD java -jar target/spring-backend-v1.jar

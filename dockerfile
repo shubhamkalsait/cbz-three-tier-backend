@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-COPY target /opt
+COPY target/* /opt
 WORKDIR /opt
 COPY application.properties src/main/resources/application.properties
 RUN mvn clean package -Dmaven.test.skip=true

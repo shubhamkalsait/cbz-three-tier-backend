@@ -1,42 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('pull'){
-            steps {
-                echo 'PULL SUCCESS'
-            }
-        }
-        stage('build'){
-            steps {
-                echo "Build Success"
-            }
-        }
-        stage('test'){
-            steps {
-                echo "test success"
-            }
-        }
-        stage('docker-build'){
-            steps {
-                echo "docker image build"
-            }
-        }
-        stage('docker-push'){
-            steps {
-                echo "push docker image"
-            }
-        }
-        stage('deploy'){
-            steps {
-                echo "kubectl apply"
-            }
-        }
-    }
-}
-
-pipeline {
-    agent any
-    stages {
         stage('PULL') {
             steps{
                 git branch: 'main', url: 'https://github.com/shubhamkalsait/cbz-three-tier-backend.git'

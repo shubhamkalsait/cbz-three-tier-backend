@@ -53,7 +53,7 @@ pipeline {
               sh '''docker build . -t shubhamkalsait1/cbz-three-tier-backend:latest
                     echo "Redhat@123" | docker login --username shubhamkalsait1 --password-stdin
                     docker push shubhamkalsait1/cbz-three-tier-backend:latest
-                    docker rmi shubhamkalsait1/dyl-my-backend:latest'''
+                    docker rmi shubhamkalsait1/cbz-three-tier-backend:latest'''
             }
         }
         stage('DEPLOY') {

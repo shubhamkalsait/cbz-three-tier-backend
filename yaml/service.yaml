@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: cbz-backend-1-svc
+  name: cbz-backend
 spec:
   selector:
-    app: cbz-backend-1
+    app: cbz-backend
   ports:
     - protocol: TCP
       port: 8080

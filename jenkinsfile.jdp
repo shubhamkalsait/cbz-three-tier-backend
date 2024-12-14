@@ -33,3 +33,28 @@ pipeline {
         }
     }
 }
+
+pipeline {
+    agent any
+    stages {
+        stage('PULL') {
+            steps{
+                git branch: 'dev', url: 'https://github.com/shubhamkalsait/dyl-my-backend.git'
+            }
+        }
+        stage('BUILD') {
+            steps{
+              sh '''docker build . -t shubhamkalsait1/dyl-my-backend:latest
+                    echo "Redhat@123" | docker login --username shubhamkalsait1 --password-stdin
+                    docker push shubhamkalsait1/dyl-my-backend:latest
+                    docker rmi shubhamkalsait1/dyl-my-backend:latest'''
+            }
+        }
+        stage('DEPLOY') {
+            steps {
+                sh '''kubectl config current-context
+                    kubectl apply -f ./yaml/'''
+            }
+        }
+    }
+}

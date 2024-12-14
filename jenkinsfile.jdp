@@ -23,7 +23,8 @@ pipeline {
         stage('DEPLOY') {
             steps {
                 sh '''kubectl config current-context
-                    kubectl apply -f ./yaml/'''
+                    kubectl apply -f ./yaml/
+                    kubectl get svc | grep '''
             }
         }
     }

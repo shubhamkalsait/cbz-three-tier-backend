@@ -42,7 +42,9 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/shubhamkalsait/cbz-three-tier-backend.git'
             }
         }
-        stage
+        stage('BUILD'){
+            steps {}
+        }
         stage('DOCKER-BUILD') {
             steps{
               sh '''docker build . -t shubhamkalsait1/dyl-my-backend:latest

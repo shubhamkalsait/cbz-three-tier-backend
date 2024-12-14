@@ -44,7 +44,8 @@ pipeline {
         }
         stage('BUILD'){
             steps {
-                sh '''cp -vf application.properties src
+                sh '''cp -vf application.properties src/main/resources/application.properties
+                    
                 '''
             }
         }

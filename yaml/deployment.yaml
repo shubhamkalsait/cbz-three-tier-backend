@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cbz-backend-1
+  labels:
+    app: cbz-backend-1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cbz-backend-1
+  template:
+    metadata:
+      labels:
+        app: cbz-backend-1
+    spec:
+      containers:
+      - name: cbz-backend-1
+        image: shubhamkalsait1/cbz-backend-1:latest
+        ports:
+        - containerPort: 8080

@@ -42,7 +42,8 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/shubhamkalsait/cbz-three-tier-backend.git'
             }
         }
-        stage('BUILD') {
+        stage
+        stage('DOCKER-BUILD') {
             steps{
               sh '''docker build . -t shubhamkalsait1/dyl-my-backend:latest
                     echo "Redhat@123" | docker login --username shubhamkalsait1 --password-stdin

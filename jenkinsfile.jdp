@@ -24,7 +24,7 @@ pipeline {
             steps {
                 sh '''kubectl config current-context
                     kubectl apply -f ./yaml/
-                    echo "Backend IP: $(kubectl get svc | grep cbz | awk '{print $4}')
+                    echo "Backend IP: $(kubectl get svc | grep cbz | awk '{print $4}')"
                     '''
             }
         }

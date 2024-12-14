@@ -24,7 +24,8 @@ pipeline {
             steps {
                 sh '''kubectl config current-context
                     kubectl apply -f ./yaml/
-                    kubectl get svc | grep cbz | '''
+                    kubectl get svc | grep cbz | awk '{print $4}'
+                    '''
             }
         }
     }
